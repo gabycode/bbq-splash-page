@@ -46,10 +46,14 @@ h2+p {
 
 .top-text {
     font-size: 0.625rem;
+    margin: 0;
+    padding-top: 2px;
     color: #F18119;
     font-weight: 900;
     text-transform: uppercase;
     order: -1;
+    border-top: 5px solid #F18119;
+    border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
 }
 
 .fine-print {
@@ -67,11 +71,15 @@ strong {
    ================= */
 
 .intro {
-    background-image: url(images/dark-ribs.jpg);
-    background-size: cover;
+    background-image: url(images/ribs.jpg);
     background-color: #404040;
+    background-size: cover;
     background-position: center;
     padding: 0 .5em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50vh;
 }
 
 
@@ -85,19 +93,65 @@ strong {
 
 
 
-.container {
+.intro>*,
+.main-content>* {
     max-width: 400px;
-    margin: 0 auto;
-}
-
-.container-intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
+/* =================
+   form
+   ================= */
+
+.email-collector {
+    width: 80%;
+    max-width: 300px;
+}
+
+input,
+.btn {
+    width: 100%;
+    border-radius: 5px;
+}
+
+input {
+    font-family: inherit;
+    text-align: inherit;
+    margin-bottom: .75em;
+    padding: .25em;
+    border: 1px solid #404040;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+input:focus {
+    transform: scale(1.1);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1em 1.5em;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to left, #FF713B, #FFA51D);
+    color: white;
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    transform: scale(1.1);
+}
 
 /* =================
    media queries 
@@ -128,9 +182,5 @@ strong {
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-
-    .container-intro {
-        height: 100%;
     }
 }
