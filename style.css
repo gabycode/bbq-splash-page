@@ -167,4 +167,8 @@ input {
         justify-content: center;
         font-size: 1.2rem;
     }
+
+    .fine-print {
+        font-size: .75rem;
+    }
 }
